@@ -17,8 +17,8 @@
         <div class="content-wrapper">
             <section class="content">
                 <div class="container-fluid">
-                    <a href="{{ route('compra.api') }}" class="btn btn-link text-light fs-4">Compra Version Api</a>
-                    <a href="{{ route('compra.local') }}" class="btn btn-link text-light fs-4">Compra Version en local</a>
+                    <a href="{{ route('compra.api') }}" class="btn btn-link text-light fs-4">{{ __('Compra Version Api') }}</a>
+                    <a href="{{ route('compra.local') }}" class="btn btn-link text-light fs-4">{{ __('Compra Version en local') }}</a>
                     @yield('contenido')
                 </div>
             </section>

@@ -6,23 +6,7 @@
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('assets/css/payment.css') }}">
-    <style>
-    .btn-buy-all {
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        z-index: 5; 
-        padding: 1rem;
-    }
-
-
-    .btn-buy:hover{
-        background: #1a71c8;
-        color: black;
-    }
-    </style>
+    <link rel="stylesheet" href="{{ asset('assets/css/compras.css') }}">
 @endpush
 
 
@@ -39,7 +23,7 @@
                         <div class="mt-auto">
                             <form action="{{ route('stripe.checkout.single', ['id' => $product->id]) }}" method="POST">
                                 @csrf
-                                <button class="btn-buy" type="submit">Comprar</button>
+                                <button class="btn-buy" type="submit">{{ __('Buy Now') }}</button>
                             </form>
                         </div>
                     </div>
@@ -52,7 +36,7 @@
     <div class="row">
         <form action="{{ route('stripe.checkout.all') }}" method="POST">
             @csrf
-            <button class="btn-buy-all btn-buy">Comprar Todos</button>
+            <button class="btn-buy-all btn-buy">{{ __('Buy All') }}</button>
         </form>
     </div>
 @endsection

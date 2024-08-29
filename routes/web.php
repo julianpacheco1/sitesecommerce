@@ -29,7 +29,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/successapi', [StripePaymentController::class, 'successApi'])->name('payment.successapi');
     Route::get('/cancel', [StripePaymentController::class, 'cancel'])->name('payment.cancel');
 
+    
     Route::get('/successlocal', [StripePaymentController::class, 'successLocal'])->name('payment.successlocal');
+    Route::get('/payment/success', [StripePaymentController::class, 'successPage'])->name('payment.success.page');
 
     Route::post('/create-checkout-session-ajax/{id}', [StripePaymentController::class, 'createCheckoutSessionAjax'])->name('stripe.checkout.ajax');
 });

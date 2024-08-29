@@ -8,18 +8,18 @@
 @section('contenido')
     <div class="container">
       <div class="pt-5">
-        <h1 class="text-center text-light">¡Congratulations!</h1>
-        <h2 class="text-center text-light">Customer and card details:</h2> 
+        <h1 class="text-center text-light">{{ __('¡Congratulations!') }}</h1>
+        <h2 class="text-center text-light">{{ __('Customer and Card details:') }}</h2> 
       </div>
         <div class="pt-5">
             <table class="table table-success table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Currency</th>
-                        <th scope="col">Country</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">{{ __('Name') }}</th>
+                        <th scope="col">{{ __('Price') }}</th>
+                        <th scope="col">{{ __('Currency')  }}</th>
+                        <th scope="col">{{ __('Country') }}</th>
+                        <th scope="col">{{ __('Email') }}</th>
                     </tr>
                 </thead>
                 <tbody>

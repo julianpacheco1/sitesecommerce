@@ -27,7 +27,7 @@
                         <h5 class="card-title">{{ $product->name }}</h5>
                         <p class="card-text">{{ $product->price }}</p>
                         <div class="mt-auto">
-                            <button type="button" id="show-button-form" data-product-id="{{ $product->id }}">Buy Now</button>
+                            <button type="button" id="show-button-form" data-product-id="{{ $product->id }}">{{ __('Buy Now') }}</button>
                         </div>
                     </div>
                 </div>
@@ -40,11 +40,11 @@
         <div class="payment-price pb-3 fs-3"></div>
         <div id="payment-element"></div>
         <div>
-            <button id="submit-button" class="">Pay now</button>
+            <button id="submit-button" class="">{{ __('Pay now') }}</button>
         </div>
         <div id="payment-message" class="hidden"></div>
         <div class="pt-4">
-            <button class="close-button-form" type="button">Close</button>
+            <button class="close-button-form" type="button">{{ __('Close') }}</button>
         </div>
     </div>
 @endsection

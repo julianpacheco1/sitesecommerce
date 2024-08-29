@@ -1,0 +1,15 @@
+.btn-buy-all {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 5; 
+  padding: 1rem;
+}
+
+
+.btn-buy:hover{
+  background: #1a71c8;
+  color: black;
+}

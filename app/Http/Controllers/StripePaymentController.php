@@ -33,6 +33,13 @@ class StripePaymentController extends Controller
                 ],
             ]);
 
+            $order = new Order();
+            $order->order_id = $paymentIntent->id;
+            $order->user_id = Auth::user()->id;
+            $order->total_amount = $product->price;
+            $order->payment_status = 'unpaid';
+            $order->save();
+
             return response()->json([
                 'clientSecret' => $paymentIntent->client_secret,
                 'amount' => $amount,
@@ -149,6 +156,9 @@ class StripePaymentController extends Controller
 
             return view('payment.successapi', compact('session'));
 
+            return redirect()->route('payment.success.page');
+
+
         } catch (\Exception $e) {
             throw new NotFoundHttpException();
         }
@@ -171,10 +181,20 @@ class StripePaymentController extends Controller
             return redirect('/')->with('error', 'Payment details not found.');
         }
 
+        $order = Order::where('order_id', $paymentIntentId)->first();
+        if (!$order) {
+            throw new NotFoundHttpException();
+        }
+
+        $order->payment_status = 'paid';
+        $order->save();
+
         $amount = $paymentIntent->amount;
         $currency = $paymentIntent->currency;
         $quantity = $paymentIntent->quantity ?? 1;
         $metadata = $paymentIntent->metadata;
+
+        $products = session('products', []);
 
         $products[] = [
             'product_name' => $metadata['product_name'] ?? 'N/A',
@@ -185,7 +205,10 @@ class StripePaymentController extends Controller
             'quantity' => $quantity,
         ];
 
-        return view('payment.successlocal', compact('products'));
+        session(['products' => $products]);
+
+        return redirect()->route('payment.success.page');
+
 
     } catch (\Stripe\Exception\ApiErrorException $e) {
         return redirect('/')->with('error', 'An error occurred while processing your payment: ' . $e->getMessage());
@@ -199,4 +222,13 @@ class StripePaymentController extends Controller
     {
         return view('payment.cancel');
     }
+
+
+    public function successPage()
+{
+    $products = session('products');
+
+    return view('payment.successlocal', compact('products'));
+}
+
 }
