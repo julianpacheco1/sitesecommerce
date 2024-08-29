@@ -39,7 +39,7 @@ Deberás crear una base de datos en tu gestor de mysql, y luego, configurar el a
 
 
 
-<h3 style="color: red;">¡IMPORTANTE!</h3>
+ ###¡IMPORTANTE!
 
 ## Antes de comenzar con la configuracion, deberás crearte una cuenta en Stripe, para poder obtener tus credenciales y así poder configurar el .env (para que funcione).
 
