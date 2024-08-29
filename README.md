@@ -41,11 +41,14 @@ Siguientes Pasos, son todos ejecutados en la raíz del proyecto.
 Deberás crear una base de datos en tu gestor de mysql, y luego, configurar el archivo .env para establecer la conexion.
 
 
-**IMPORTANTE!**
 
-Antes de comenzar con la configuracion, deberás crearte una cuenta en Stripe, para poder obtener tus credenciales y así poder configurar el .env (para que funcione).
+<h3 style="color: red;">¡IMPORTANTE!</h3>
+
+## Antes de comenzar con la configuracion, deberás crearte una cuenta en Stripe, para poder obtener tus credenciales y así poder configurar el .env (para que funcione).
 
  - [Link para crearte una cuenta](https://dashboard.stripe.com/register).
+
+
 
 Agrega las siguientes claves a tu archivo `.env`:
 
@@ -53,6 +56,8 @@ Agrega las siguientes claves a tu archivo `.env`:
 STRIPE_KEY=
 STRIPE_SECRET=
 ```
+
+
 
 
 4. **Ejecutar Migraciones**:
@@ -72,6 +77,9 @@ STRIPE_SECRET=
    php artisan serve
 
 
+
+
+
 7. **Roadmap del proyecto**
 
 En el inicio, te encontraras con una básica navegacion, a la cual podras acceder sin problemas, aunque no estes logueado; pero cuando intentes comprar, inevitablemente vas a necesitar loguearte.
@@ -82,6 +90,9 @@ La aplicacion cuenta con 2 versiones, una que la llamo local, y otra que la llam
 
 La version en local, es la que no te redirije hacia Stripe para poder comprar, lo podes hacer dentro del mismo aplicativo.
 Y la version Api, cuando ejecutes una compra, te redirige hacia su sitio. Una vez ejecutada esa compra, te devuelve al aplicativo.
+
+
+
 
 
 8 . **Informacion útil**
@@ -103,6 +114,9 @@ CVC : "cualquiera"
 
 
 
-**Documentacion de Stripe**
+
+
+
+**Documentacion de Stripe**:
 
  - [Vea aquí la documentacion](https://docs.stripe.com/payments/accept-a-payment).
