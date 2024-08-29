@@ -104,14 +104,14 @@ Introduzca cualquier código postal de facturación.
 
 Para poder simular una compra : 
 
-Email : "cualquiera".
-Numero de tarjeta : 4242424242424242
-Fecha de vencimiento : "cualquiera"
-CVC : "cualquiera"
+- **Email:** "cualquiera"
+- **Número de Tarjeta:** `4242 4242 4242 4242`
+- **Fecha de Vencimiento:** "cualquiera" (puedes usar cualquier fecha futura)
+- **CVC:** "cualquiera" (puedes usar cualquier número de 3 dígitos)
+- **Código Postal de Facturación:** "cualquiera"
 
 
-
-
+**Nota:** Asegúrate de utilizar los datos de prueba proporcionados por Stripe para asegurar que la simulación funcione correctamente.
 
 
 **Documentacion de Stripe**:
