@@ -1,8 +1,5 @@
 # Sites Ecommerce
 
-## Descripción
-
-Breve descripción del proyecto. Explica qué hace y cuál es su propósito.
 
 ## Instalación
 
